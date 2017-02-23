@@ -1,0 +1,31 @@
+{
+    "name": "%ext_name%",
+    "description": "%ext_description%",
+    "default_locale": "en",
+    "version": "%ext_version%",
+    "background": {
+        "scripts": ["background-min.js"]
+    },
+    "content_scripts": [{
+        "persistent": false,
+        "matches": ["<all_urls>"],
+        "js": ["content-min.js"],
+        "all_frames": true,
+        "run_at": "document_end"
+    }],
+    "browser_action": {
+        "default_icon": "images/icon.png"
+    },
+    "devtools_page": "devtools-min.html",
+    "icons": {
+        "16": "images/icon.png",
+        "32": "images/icon.png",
+        "48": "images/icon.png",
+        "64": "images/icon.png",
+        "128": "images/icon.png"
+    },
+    "permissions": [
+        "activeTab", "http://*/", "https://*/"
+    ],
+    "manifest_version": 2
+}

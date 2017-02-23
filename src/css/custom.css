@@ -1,0 +1,49 @@
+/*normalize*/
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    /* Set your content font stack here: */
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+.pure-table {
+	font-size: 10px;
+}
+
+.pure-button {
+  font-family: Arial, Arial, "Arial", serif;
+  font-size: 10px;
+}
+
+/*spinner*/
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+@-webkit-keyframes spinner {
+  to {-webkit-transform: rotate(360deg);}
+}
+.spinner {
+  min-width: 50px;
+  min-height: 50px;
+  position: absolute;
+  z-index: 1;
+  left: 45%;
+  margin-top: 10px;
+}
+.spinner:before {
+  content: 'Loading…';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  margin-top: -13px;
+  margin-left: -13px;
+}
+.spinner:not(:required):before {
+  content: '';
+  border-radius: 50%;
+  border: 5px solid #ccc;
+  border-top-color: #03ade0;
+  animation: spinner .6s linear infinite;
+  -webkit-animation: spinner .6s linear infinite;
+}

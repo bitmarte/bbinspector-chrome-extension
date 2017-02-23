@@ -1,0 +1,22 @@
+{
+  "name": "BB-inspector",
+  "authors": [
+    "bitmarte"
+  ],
+  "description": "Chrome extension for inspectoring Backbase model!",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pure": "~0.6.0"
+  }
+}
