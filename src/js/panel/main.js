@@ -12,4 +12,16 @@ $(document).ready(function() {
 	BackbaseInfo.render();
 	CollapsiblePageTree.render();
 
+	chrome.devtools.network.onNavigated.addListener(function (url) {
+    	backgroundPageConnection.postMessage({action: "onTabStatus", status: "complete"});
+    	var prevStatus;
+    	backgroundPageConnection.onMessage.addListener(function(message) {
+    		if(message.status === "complete" && prevStatus !== "complete") {
+    			BackbaseInfo.render();
+				  CollapsiblePageTree.render();
+				  prevStatus = message.status;
+    		}
+    	});
+	});
+
 });

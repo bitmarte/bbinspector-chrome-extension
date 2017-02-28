@@ -8,6 +8,11 @@ chrome.runtime.onConnect.addListener(function (port) {
 				case 'jsInject':
 					chrome.tabs.executeScript(message.tabId, {file: message.fileToInject, runAt: 'document_end'});
 					break;
+				case 'onTabStatus':
+					chrome.tabs.onUpdated.addListener(function (tabId, changes, tabObject) {
+						port.postMessage({status: changes.status});
+					});
+					break;
 			}
 		});
 
