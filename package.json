@@ -1,6 +1,6 @@
 {
   "name": "BB-inspector",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Chrome extension for inspectoring Backbase model!",
   "dependencies": {},
   "devDependencies": {
@@ -14,7 +14,6 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-htmlmin": "^2.0.0",
     "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0",
     "grunt-fixmyjs": "^0.3.0",
     "grunt-html-convert": "0.0.2",
     "grunt-plato": "^1.2.1",

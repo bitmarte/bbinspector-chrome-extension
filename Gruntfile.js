@@ -184,31 +184,6 @@ module.exports = function(grunt) {
 					}
 				]
 			}
-		},
-		watch: {
-			scripts: {
-				files: [
-					'_locales/**',
-					'manifest.json',
-					'src/js/**',
-					'src/html/**',
-					'src/css/**',
-					'src/templates/**'
-				],
-				tasks: [
-					'clean:dist',
-					'replace',
-					'fixmyjs',
-					'htmlConvert',
-					'uglify',
-					'htmlmin',
-					'postcss',
-					'copy',
-					'clean:tmp'],
-				options: {
-					spawn: false
-				}
-			}
 		}
 	});
 	
@@ -224,7 +199,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-watch');
 	
 	grunt.registerTask(
 		'default',[
@@ -236,8 +210,7 @@ module.exports = function(grunt) {
 			'htmlmin',
 			'postcss',
 			'copy',
-			'clean:tmp',
-			'watch'
+			'clean:tmp'
 		]
 	);
 
