@@ -104,6 +104,32 @@ ItemsInPage.renderItemDetail = function(itemId) {
 					}
 				});
 
+				// preferences
+				if(item.preferences != undefined) {
+					item.preferences.array.forEach(function (el) {
+						itemsInfoTable.rows.push({
+							values: [
+								'(pref) '+el.name,
+								el.value || '',
+								''
+							]
+						});
+					});
+				}
+
+				// tags
+				if(item.tags != undefined) {
+					item.tags.forEach(function (el) {
+						itemsInfoTable.rows.push({
+							values: [
+								'(tags) '+el.type,
+								el.value || '',
+								''
+							]
+						});
+					});
+				}
+
 				$('#itemsInfoTable').html(Mustache.to_html(_templates.defaultTable, itemsInfoTable));
 
 				$('.item-detail-action').on('click', function(e) {
